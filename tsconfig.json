@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    // ↓禁止对同一个文件的不一致的引用。
+    "forceConsistentCasingInFileNames": true,
+    // ↓禁用函数参数双向协变检查。
+    "strictFunctionTypes": false,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    // ↓生成相应的 .map文件。
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // ↓若有未使用的局部变量则抛错。
+    "noUnusedLocals": true,
+    // ↓若有未使用的参数则抛错。
+    "noUnusedParameters": true,
+    // ↓启用实验性的ES装饰器。
+    "experimentalDecorators": true,
+    // ↓在表达式和声明上有隐含的 any类型时报错。
+    "noImplicitAny": false,
+    // ↓忽略所有的声明文件（ *.d.ts）的类型检查。
+    "skipLibCheck": true,
+    // ↓要包含的类型声明文件路径列表。
+    "typeRoots": ["./node_modules/@types/", "./types"],
+    // ↓要包含的类型声明文件名列表
+    "types": ["webpack-env"],
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "src/**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

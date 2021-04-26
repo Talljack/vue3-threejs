@@ -1,0 +1,32 @@
+ply
+format ascii 1.0
+element vertex 8
+property float x
+property float y
+property float z
+element edge 12
+property int vertex1
+property int vertex2
+end_header
+0 0 0
+25 0 0
+0 25 0
+0 0 25
+25 25 0
+25 0 25
+0 25 25 
+25 25 25
+0 1
+0 2
+0 3
+6 3
+6 2
+6 7
+3 5
+5 7
+1 5
+2 4
+1 4
+7 4
+
+
