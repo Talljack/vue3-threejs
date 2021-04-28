@@ -1559,6 +1559,11 @@ vue-router@^4.0.6:
   resolved "https://artifactory.tusimple.ai:443/artifactory/api/npm/npm-infra-common/vue-router/-/vue-router-4.0.6.tgz#91750db507d26642f225b0ec6064568e5fe448d6"
   integrity sha1-kXUNtQfSZkLyJbDsYGRWjl/kSNY=
 
+vue-three-fiber@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.tusimple.ai:443/artifactory/api/npm/npm-infra-common/vue-three-fiber/-/vue-three-fiber-1.0.0.tgz#c8650d624fe588f3f9ed76cdaee3b22b97cec449"
+  integrity sha1-yGUNYk/liPP57XbNruOyK5fOxEk=
+
 vue-tsc@^0.0.15:
   version "0.0.15"
   resolved "https://artifactory.tusimple.ai:443/artifactory/api/npm/npm-infra-common/vue-tsc/-/vue-tsc-0.0.15.tgz#2951f0479bf0b966c828748927e8ea5b82a15070"
