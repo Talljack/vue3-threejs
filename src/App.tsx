@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { PLYExporter } from 'three/examples/jsm/exporters/PLYExporter.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 // import {PLYLoader} from 'three/examples/jsm/loaders/PLYLoader.js';
-// import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader';
+import {OBJLoader} from 'three/examples/jsm/loaders/OBJLoader';
 // import {PCDLoader} from 'three/examples/jsm/loaders/PCDLoader';
 // import {ObjectLoader} from 'three/src/loaders/ObjectLoader';
 
@@ -127,23 +127,23 @@ function init() {
 
 
 //线框
-var box = new THREE.BoxGeometry(30, 30, 30);
-var boxMaterial = new THREE.MeshPhongMaterial({
-  color: 0xffffff,
-	wireframe: true
-});
-// 立方体网格模型
-var boxMesh = new THREE.Mesh(box, boxMaterial);
+// var box = new THREE.BoxGeometry(30, 30, 30);
+// var boxMaterial = new THREE.MeshPhongMaterial({
+//   color: 0xffffff,
+// 	wireframe: true
+// });
+// // 立方体网格模型
+// var boxMesh = new THREE.Mesh(box, boxMaterial);
 
-// 立方体几何体box作为EdgesGeometry参数创建一个新的几何体
-var edges = new THREE.EdgesGeometry(box);
-// 立方体线框，不显示中间的斜线
-var edgesMaterial = new THREE.LineBasicMaterial({
-  color: 0xffff00
-})
-var line = new THREE.LineSegments(edges,edgesMaterial);
-// 网格模型和网格模型对应的轮廓线框插入到场景中
-scene.add(edges,line);
+// // 立方体几何体box作为EdgesGeometry参数创建一个新的几何体
+// var edges = new THREE.EdgesGeometry(box);
+// // 立方体线框，不显示中间的斜线
+// var edgesMaterial = new THREE.LineBasicMaterial({
+//   color: 0xffff00
+// })
+// var line = new THREE.LineSegments(edges,edgesMaterial);
+// // 网格模型和网格模型对应的轮廓线框插入到场景中
+// scene.add(edges,line);
 
 	//pcd格式
 	// const pcdLoader = new PCDLoader();
@@ -154,24 +154,24 @@ scene.add(edges,line);
 	
 
 
-	//obj格式
-	// const OBJloader = new OBJLoader();
-	// OBJloader.load('../public/12.obj',function ( obj ) {
-	// 	var children = obj.children;
-	// 		for (var i = 0; i < children.length; i++) {
-	// 				//添加阴影
-	// 				children[i].castShadow= true;
-	// 		}
-	// 		scene.add(obj);
-	// 		obj.scale.set(1,1,1);
-	// 		// obj.children[0].material.color.set(0xff0000);
-	// },
-	// function ( xhr ) {
-	// 	console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-	// },
-	// function ( error ) {
-	// 	console.log( 'An error happened' );
-	// })
+	// obj格式
+	const OBJloader = new OBJLoader();
+	OBJloader.load('../public/obj3.obj',function ( obj ) {
+		var children = obj.children;
+			for (var i = 0; i < children.length; i++) {
+					//添加阴影
+					children[i].castShadow= true;
+			}
+			scene.add(obj);
+			obj.scale.set(100,100,100);
+			// obj.children[0].material.color.set(0xff0000);
+	},
+	function ( xhr ) {
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+	},
+	function ( error ) {
+		console.log( 'An error happened' );
+	})
 
 	//json格式
 

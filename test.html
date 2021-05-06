@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    function tishi1() {
+      // let canvas = document.createElement('canvas');
+      let canvas = document.getElementById('canvas')
+      let context = canvas.getContext('2d')
+      let metrics = context.measureText('test')
+      drawUsingArc(50, 50, 100, 50, 20, context);
+      context.fillStyle = "#fff";
+
+      function drawUsingArc(x, y, w, h, r, ctx) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + w, y);
+        ctx.arc(x + w, y + r, r, (Math.PI / 180) * 270, Math.PI / 180 * 0);
+        ctx.arc(x + w, y + r, r, (Math.PI / 180) * 0, Math.PI / 180 * 90);
+        ctx.lineTo(x - r, y + 2 * r);
+        ctx.lineTo(x - r, y + r);
+        ctx.arc(x, y + r, r, (Math.PI / 180) * 180, Math.PI / 180 * 270);
+
+        ctx.fillStyle = "blue";
+        ctx.fill();
+
+
+        ctx.stroke();
+      }
+      var fontsize = 18;
+      var fontface = "Arial";
+      context.fillStyle = "#fff";
+      context.font = "Bold " + fontsize + "px " + fontface;
+      context.fillText('test', 100 - metrics.width, 75)
+
+
+      /* 边框的颜色 */
+      context.strokeStyle = "rgba(254,254,254)";
+      context.lineWidth = 3
+
+
+    }
+    tishi1()
+  </script>
+</body>
+
+</html>

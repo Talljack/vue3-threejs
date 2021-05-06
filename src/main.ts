@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App'
 import LineHover from './LineHover'
 import Reg from './reg'
-import test from './test.vue'
-import lines from './lines.vue'
+import Animation from './Animation';
+import twoDRender from './2DRender';
 
-createApp(test).mount('#app')
+createApp(Animation).mount('#app')
